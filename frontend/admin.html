@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"><title>Админка</title></head>
+<body data-page="admin">
+    <header><div class="container hed"><button class="burger-btn" id="burgerBtn"><span></span><span></span><span></span></button><h1>StreetREND</h1><nav class="burger-menu" id="burgerMenu"><h2 class="menu-title">Меню</h2><ul class="menu-list"></ul></nav></div></header>
+    <div class="menu-overlay" id="menuOverlay"></div>
+        <main class="container">
+        <h2>Панель управления</h2>
+
+        <div class="admin-tabs">
+            <button class="btn" onclick="switchAdminTab('orders')">Заявки</button>
+            <button class="btn" id="tab-btn-admins" style="display:none;" onclick="switchAdminTab('admins')">Сотрудники</button>
+
+            <button class="btn" id="tab-btn-branches" style="display:none;" onclick="switchAdminTab('branches')">Филиалы</button>
+        </div>
+
+        <div id="section-orders" class="admin-section">
+            <button class="btn" style="margin-bottom: 15px;" onclick="loadAdminOrders()">Обновить заявки</button>
+            <div id="admin-orders" style="display:flex; flex-direction:column; gap:10px;"></div>
+        </div>
+
+        <div id="section-admins" class="admin-section" style="display:none;">
+            <div class="admin-layout">
+
+                <div class="admin-list-block">
+                    <h3>Сотрудники</h3>
+                    <ul id="admins-list" style="list-style:none; padding:0; margin-bottom:20px;"></ul>
+                    <button class="btn" style="width:100%;" onclick="resetAdminForm()">+ Новый сотрудник</button>
+                </div>
+
+                <div class="admin-form-block">
+                    <h3 id="admin-form-title">Добавить сотрудника</h3>
+                    <input type="hidden" id="adm-id">
+                    <input type="text" id="adm-name" placeholder="Имя" required>
+                    <input type="text" id="adm-lastname" placeholder="Фамилия" required>
+                    <input type="email" id="adm-email" placeholder="Почта" required>
+                    <input type="password" id="adm-pass" placeholder="Пароль (оставьте пустым, чтобы не менять)">
+
+                    <select id="adm-role">
+                        <option value="junior">Младший админ</option>
+                        <option value="senior">Старший админ</option>
+                        <option value="super">Супер админ</option>
+                    </select>
+
+                    <select id="adm-branch">
+                        <option value="">Без привязки к филиалу</option>
+
+                    </select>
+
+                    <div style="display:flex; gap:10px; margin-top:15px; justify-content:flex-end;">
+                        <button class="btn" style="background:transparent; border:1px solid #fff;" onclick="resetAdminForm()">Отмена</button>
+                        <button class="btn" onclick="saveAdmin()">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-branches" class="admin-section" style="display:none;">
+            <div class="admin-layout">
+
+                <div class="admin-list-block">
+                    <h3>Список филиалов</h3>
+                    <ul id="branches-list" style="list-style:none; padding:0; margin-bottom:20px;"></ul>
+                </div>
+
+                <div class="admin-form-block">
+                    <h3>Добавить филиал</h3>
+                    <input type="text" id="br-city" placeholder="Город (например, Новосибирск)" required>
+                    <input type="text" id="br-address" placeholder="Адрес (например, ул. Ленина 1)" required>
+                    <div style="display:flex; gap:10px; margin-top:15px; justify-content:flex-end;">
+                        <button class="btn" onclick="saveBranch()">Создать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body></html>

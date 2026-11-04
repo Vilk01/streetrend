@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"><title>Каталог</title></head>
+<body data-page="catalog">
+    <header><div class="container hed"><button class="burger-btn" id="burgerBtn"><span></span><span></span><span></span></button><h1>StreetREND</h1><nav class="burger-menu" id="burgerMenu"><h2 class="menu-title">Меню</h2><ul class="menu-list"></ul></nav></div></header>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <main class="container catalog-layout">
+        <aside class="sidebar-filters"><h2>Фильтры</h2><ul class="filter-list"><li><a href="#" class="filter-item active">Все товары</a></li></ul></aside>
+        <section class="catalog-content">
+            <div class="search-bar-wrapper"><input type="text" class="catalog-search" id="search-input" placeholder="Поиск" oninput="loadCatalog(this.value)"></div>
+            <div id="admin-controls"></div>
+            <div class="catalog-content-bg"><div class="grid-layout"></div></div>
+        </section>
+    </main>
+    <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
+        <div style="background:#2a1f1f; padding:30px; border-radius:15px; width:400px;">
+            <h3 id="modal-title">Новый товар</h3>
+            <input type="text" id="m-title" placeholder="Название" style="width:100%; margin-bottom:10px; padding:10px; background:#382d2d; border:none; color:#fff; border-radius:5px;">
+            <textarea id="m-desc" placeholder="Описание" style="width:100%; margin-bottom:10px; padding:10px; background:#382d2d; border:none; color:#fff; border-radius:5px; min-height:80px; resize:vertical;"></textarea>
+            <input type="number" id="m-price" placeholder="Цена" style="width:100%; margin-bottom:10px; padding:10px; background:#382d2d; border:none; color:#fff; border-radius:5px;">
+            <label style="color:#fff; font-size:12px;">Картинка товара:</label>
+            <input type="file" id="m-image" accept="image/*" style="margin-bottom:10px; color:#fff;">
+            <img id="m-preview" style="display:none; max-width:100px; border-radius:5px; margin-bottom:10px;">
+            <label style="color:#fff; font-size:12px; margin-bottom: 5px; display:block;">Доступно в филиалах (зажмите Ctrl для выбора нескольких):</label>
+            <select id="m-branches" multiple style="width:100%; margin-bottom:15px; padding:10px; background:#382d2d; color:#fff; border:none; border-radius:5px; min-height: 80px; outline: none;">
+
+            </select>
+            <div style="display:flex; gap:10px; justify-content:flex-end;">
+                <button class="btn" onclick="document.getElementById('modal').style.display='none'">Отмена</button>
+                <button class="btn" onclick="saveItem()">Сохранить</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body></html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"><title>Вход</title></head>
+<body data-page="signin">
+    <header><div class="container hed"><button class="burger-btn" id="burgerBtn"><span></span><span></span><span></span></button><h1>StreetREND</h1><nav class="burger-menu" id="burgerMenu"><h2 class="menu-title">Меню</h2><ul class="menu-list"></ul></nav></div></header>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <main class="container"><section class="signIn"><div class="auth-card">
+        <h2>Вход</h2>
+        <form class="auth-form">
+            <div class="input-group"><input type="text" name="email" placeholder="Почта" required></div>
+            <div class="input-group password-wrapper">
+                <input type="password" name="password" id="pass-login" placeholder="Пароль" required>
+                <button type="button" class="toggle-password" onclick="togglePassword('pass-login', this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+            </div>
+            <div class="form-actions"><button type="submit" class="btn">Войти</button></div>
+        </form>
+        <div class="register-prompt"><a href="signUp.html" class="register-link">Еще нет аккаунта? Регистрируйся!</a></div>
+    </div></section></main>
+    <script src="script.js"></script>
+</body></html>

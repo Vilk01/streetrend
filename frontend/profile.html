@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"><title>Личный кабинет</title></head>
+<body data-page="profile">
+    <header><div class="container hed"><button class="burger-btn" id="burgerBtn"><span></span><span></span><span></span></button><h1>StreetREND</h1><nav class="burger-menu" id="burgerMenu"><h2 class="menu-title">Меню</h2><ul class="menu-list"></ul></nav></div></header>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <main class="container">
+        <section class="profile-layout">
+            <div class="profile-left">
+                <div class="profile-info">
+                    <div class="decor-dog"><img src="Images/dog.png" alt="Собака" style="width:100%;"></div>
+                    <div class="profile-fields">
+                        <div class="profile-field"><input type="text" id="pf-lastname" placeholder="Фамилия"></div>
+                        <div class="profile-field"><input type="text" id="pf-name" placeholder="Имя"></div>
+                        <div class="profile-field"><input type="text" id="pf-fathername" placeholder="Отчество"></div>
+                        <div class="profile-field" style="margin-top: 20px;"><input type="tel" id="pf-phone" placeholder="Телефон"></div>
+                        <div class="profile-field"><input type="email" id="pf-email" placeholder="Почта" disabled></div>
+                        <div class="profile-field"><input type="text" id="pf-city" placeholder="Город"></div>
+                        <button class="btn" style="width: 100%; margin-top: 10px;" onclick="saveProfile()">Сохранить изменения</button>
+                    </div>
+                </div>
+                <div class="profile-history"><h3>История аренды\заказов</h3><div id="orders-list"><p style="color: #a8a8a8;">Загрузка...</p></div></div>
+            </div>
+            <div class="profile-right">
+                <div class="profile-photo avatar-wrapper" onclick="document.getElementById('avatar-input').click()">
+                    <img id="pf-avatar" src="Images/default_avatar.png" alt="Фото профиля">
+                    <div class="avatar-hover">Загрузить фото</div>
+                </div>
+                <input type="file" id="avatar-input" accept="image/*" style="display: none;" onchange="uploadAvatar(event)">
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body></html>

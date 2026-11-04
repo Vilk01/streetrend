@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"><title>Регистрация</title></head>
+<body data-page="signup">
+    <header><div class="container hed"><button class="burger-btn" id="burgerBtn"><span></span><span></span><span></span></button><h1>StreetREND</h1><nav class="burger-menu" id="burgerMenu"><h2 class="menu-title">Меню</h2><ul class="menu-list"></ul></nav></div></header>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <main class="container"><section class="signIn"><div class="auth-card auth-card-wide">
+        <h2>Регистрация</h2>
+        <form class="auth-form">
+            <input type="text" name="name" placeholder="Имя" required>
+            <input type="text" name="lastname" placeholder="Фамилия" required>
+            <input type="tel" name="phone" placeholder="Телефон" required>
+            <input type="email" name="email" placeholder="Почта" required>
+            <input type="text" name="city" placeholder="Город" required>
+            <div class="input-group password-wrapper">
+                <input type="password" name="password" id="pass-reg" placeholder="Пароль" required>
+                <button type="button" class="toggle-password" onclick="togglePassword('pass-reg', this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+            </div>
+            <div class="input-group password-wrapper">
+                <input type="password" name="confirm_password" id="pass-conf" placeholder="Повторите пароль" required>
+                <button type="button" class="toggle-password" onclick="togglePassword('pass-conf', this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+            </div>
+            <div class="form-actions"><button type="submit" class="btn registration-submit-btn">Войти</button></div>
+        </form>
+    </div></section></main>
+    <script src="script.js"></script>
+</body></html>
